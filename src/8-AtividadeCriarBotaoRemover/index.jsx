@@ -39,6 +39,7 @@
 // No conteúdo do botão, coloque o texto "Remover".
 
 import React, {useState} from "react";
+import Header from "./components/Header";
 
 export default function Home() {
     const [listaProdutos, setProdutos] = useState([
