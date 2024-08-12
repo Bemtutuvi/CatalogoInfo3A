@@ -13,15 +13,12 @@ export default function Home() {
   return (
     <div>
          <h1>Livros de Romance e Fantasia</h1>
-         <div>
         {listaProdutos.map(produto => (
           <div key={produto.id}>
             <h2>{produto.nome}</h2>
-            <p>{produto.preco}</p>
+            <p>Valor: {produto.preco}</p>
           </div>
         ))}
-      </div>
-    </div>
-   
+      </div>   
   );
 }

@@ -17,30 +17,31 @@ export default function Home() {
 
   const adicionarItemPedidos = (objeto) => {
     setListaPedidos([...listaPedidos, objeto]);
+  }
+
+  const adicionarPedido = () => {
+    const novoPedido={id:3, nome: 'Os Dois Morrem no Final', quantidade: 3, precoTotal: 'R$149,97'};
+    adicionarItemPedidos(novoPedido);
+  }
+
+  const removerItemPedidos = (id)=>{
+    setListaPedidos(listaPedidos.filter(pedido=>pedido.id !== id));
   };
+
   return (
     <div>
-      <h1>Livros de Romance e Fantasia</h1>
+      <h1>Meus Pedidos</h1>
+      <button onClick={adicionarPedido}> Adicionar</button>
       <div>
-        {listaProdutos.map(produto => (
-          <div key={produto.id}>
-            <h2>{produto.nome}</h2>
-            <p>{produto.preco}</p>
-            <button onClick={() => adicionarItemPedidos(produto)}>
-              Selecionar
-            </button>
+        {listaPedidos.map(pedido=>(
+          <div key={pedido.id}>
+            <h2>{pedido.nome}</h2>
+            <p>Quantidade: {pedido.quantidade}</p>
+            <p>Valor Total: {pedido.precoTotal}</p>
+            <button onClick={() => removerItemPedidos(pedido.id)}>Selecionar</button>
           </div>
         ))}
       </div>
-      <div>
-        <h2>Meus Pedidos</h2>
-        {listaPedidos.map((pedido, index) => (
-          <div key={index}>
-            <h3>{pedido.nome}</h3>
-            <p>{pedido.preco}</p>
-          </div>
-        ))}
       </div>
-    </div>
-  );
-}
+      );
+    }
