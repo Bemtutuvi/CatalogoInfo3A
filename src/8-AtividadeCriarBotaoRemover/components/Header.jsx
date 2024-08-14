@@ -1,11 +1,7 @@
-import React from 'react';
-
-const Header = ({ title }) => {
+export default function Header({ objeto }) => {
   return (
-    <header>
-      <h1>{title}</h1>
-    </header>
+   <div>
+    <p>{objeto.nome}</p>
+    </div>
   );
 };
-
-export default Header;
