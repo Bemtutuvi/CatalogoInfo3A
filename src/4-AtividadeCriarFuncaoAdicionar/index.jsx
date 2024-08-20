@@ -5,7 +5,6 @@
 // Exemplo: `setListaPedidos([...listaPedidos, objeto]);`
 
 import React, { useState } from "react";
-
 export default function Home() {
   const [listaProdutos, setListaPedidos] = useState([ 
     { id: 1, nome: 'Meu Querido Ex', preco: 'R$ 25,99'},
